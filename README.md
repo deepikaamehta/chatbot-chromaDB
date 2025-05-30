@@ -1,18 +1,30 @@
 # Chatbot with ChromaDB and OpenAI
 
-This repository contains a Python-based chatbot powered by **OpenAI's GPT models**, using **LangChain** for orchestration and **ChromaDB** as a lightweight, local vector store for semantic search. The project enables intelligent querying over custom documents.
+This project is a command-line-based chatbot application using **LangChain**, **OpenAI's GPT API**, and **ChromaDB**. It allows you to chat with a language model that's aware of your local documents through vector-based retrieval.
+
+---
 
 ## Features
 
-- Chat interface using OpenAI's GPT API
-- Document embedding with ChromaDB for vector-based retrieval
-- Fast and local semantic search
-- Secure API key handling via `.env` file
-- Clean separation between ingestion and interaction
+- Embeds documents into a local vector database (ChromaDB)
+- Retrieves semantically similar content using LangChain retrievers
+- Uses OpenAI GPT API to generate responses based on query and context
+- Secure environment configuration using `.env`
+- Modular and extensible Python code
 
-## Getting Started
+---
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/deepikaamehta/chatbot-chromaDB.git
-cd chatbot-chromaDB
+## Project Files and Their Purpose
+
+| File / Folder          | Purpose                                                                 |
+|------------------------|-------------------------------------------------------------------------|
+| `chatbot.py`           | Main script to start a chatbot session using LangChain and OpenAI       |
+| `ingest_database.py`   | Script to embed documents from `data/` into ChromaDB vector store       |
+| `data/`                | Folder containing your text or PDF files for knowledge ingestion        |
+| `chroma_db/`           | Auto-generated local vector store (excluded from Git)                   |
+| `.env`                 | Contains your OpenAI API key (never committed)                          |
+| `.env.example`         | Template for setting up `.env`                                          |
+| `.gitignore`           | Ensures `.env` and `chroma_db/` are ignored by Git                      |
+| `README.md`            | This documentation                                                      |
+
+---
